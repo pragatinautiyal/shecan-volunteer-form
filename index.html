@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>She Can Foundation - Volunteer Form</title>
+
+<style>
+    body {
+        background-color: #f2f6ff;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 500px;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        color: darkblue;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 6px;
+        margin-top: 4px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .buttons input {
+        width: 48%;
+        padding: 8px;
+    }
+
+    input:valid, textarea:valid {
+        border: 2px solid green;
+    }
+
+    input:invalid, textarea:invalid {
+        border: 2px solid red;
+    }
+
+    input[type="submit"]:hover {
+        background-color: green;
+        color: white;
+        cursor: pointer;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(255, 96, 4);
+        cursor: pointer;
+    }
+
+    input[type="reset"] {
+        background-color: rgb(255, 96, 4);
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<center>
+    <img src="ngo.jpg" width="120" height="120" alt="She Can Foundation Logo">
+</center>
+
+<marquee direction="right">
+    <font size="4" color="darkblue">
+        Join She Can Foundation - Empowering Women Together 💜
+    </font>
+</marquee>
+
+<div class="container">
+    <h1>Volunteer Registration Form</h1>
+
+    <form onsubmit="showMessage(); return false;">
+
+        <label>Full Name:</label>
+        <input type="text" name="name" required 
+               pattern="[A-Za-z ]{3,30}"
+               oninvalid="this.setCustomValidity('Name should contain only letters (no numbers or special characters)')"
+               oninput="this.setCustomValidity('')">
+
+        <br><br>
+
+        <label>Email ID:</label>
+        <input type="email" name="email" required
+               oninvalid="this.setCustomValidity('Please enter a valid email (must include @)')"
+               oninput="this.setCustomValidity('')">
+
+        <br><br>
+
+        <label>Phone Number:</label>
+        <input type="tel" name="phone" required 
+               pattern="[0-9]{10}"
+               oninvalid="this.setCustomValidity('Phone number must be exactly 10 digits')"
+               oninput="this.setCustomValidity('')">
+
+        <br><br>
+
+        <label>Why do you want to join us?</label>
+        <textarea name="message" rows="4" required
+                  oninvalid="this.setCustomValidity('Please fill out this field')"
+                  oninput="this.setCustomValidity('')"></textarea>
+
+        <br><br>
+
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+    <p id="successMsg" style="color:green; text-align:center; font-weight:bold;"></p>
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById("successMsg").innerText = "Form Submitted Successfully";
+    }
+</script>
+
+</body>
+</html>
