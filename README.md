@@ -9,7 +9,7 @@ A simple and responsive volunteer registration form built for the **She Can Foun
 * Clean and user-friendly UI
 * Form validation using HTML5 and JavaScript
 * Name validation (only letters allowed)
-* Email validation (shpuld include `@`)
+* Email validation (should include `@`)
 * Phone number validation (exactly 10 digits)
 * Custom error messages
 * Success message on form submission
